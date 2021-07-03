@@ -1,0 +1,28 @@
+.btn {
+   border: none;
+   cursor: pointer;
+   &:focus {
+      outline: none;
+   }
+   &--primary {
+      background-color: var(--c-primary-l);
+      color: #fff;
+      transition: var(--transition);
+      &:hover {
+         background-color: #b68c21;
+      }
+   }
+   &--block {
+      display: block;
+      width: 100%;
+   }
+   &--text {
+      &:link,
+      &:visited {
+         display: inline-block;
+         text-decoration: none;
+         text-align: center;
+         text-transform: capitalize;
+      }
+   }
+}

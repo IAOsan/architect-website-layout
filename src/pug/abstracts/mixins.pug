@@ -1,0 +1,43 @@
+mixin socialList(style, icons) 
+   article(class=style)
+      ul.social__list
+         each icon in icons 
+            li.social__item
+               a.social__link(href="#")  
+                  i.social__icon(class=`${icon}`)
+                  
+mixin service(icon, title) 
+   article.service
+      .service__header 
+         i.service__icon(class=icon)
+         h3.service__title #{title}
+      if block 
+         block
+      else 
+         p.service__description no content provided
+
+mixin teamMember(photo, photow1,photow2, name, job)
+   article.team-member(data-tilt)
+      img.team-member__photo(srcset=`assets/img/${photo}-xs.jpg ${photow1}, assets/img/${photo}.jpg ${photow2}` sizes="(max-width: 56.25em) 26vw, (max-width: 37.5em) 26vw, 370px" src=`assets/img/${photo}.jpg`, alt=name)
+      .team-member__info 
+         h3.team-member__name #{name}
+         h4.team-member__job #{job}
+         if block 
+            block  
+         else 
+            p.team-member__description No description provided 
+         a.btn--text.btn--primary.team-member__btn(href="#") read more
+
+mixin form 
+   form.form
+      .form__group
+         input#inputForm.form__control(type="text", name="name" placeholder="FULL NAME" required)
+         label.form__label(for="inputForm") FULL NAME
+      .form__group
+         input#inputEmail.form__control(type="email", name="email" placeholder="EMAIL" required)
+         label.form__label(for="inputEmail") EMAIL
+      .form__group
+         textarea#inputMessage.form__control(name="message" placeholder="MESSAGE")
+         label.form__label.form__label--message(for="inputForm") MESSAGE
+      button.btn.btn--primary.btn--block.form__btn(type="submit") submit
+

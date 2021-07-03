@@ -1,0 +1,84 @@
+.form {
+   width: 55rem;
+   margin: 0 auto;
+   @include respond(992) {
+      width: 100%;
+   }
+   &__group {
+      width: 100%;
+      min-height: 11rem;
+      font-family: var(--f-muli);
+      @include respond(992) {
+         width: 100%;
+         min-height: 9rem;
+      }
+   }
+   &__control {
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      border-bottom: 0.3rem dashed var(--c-gray-1);
+      padding: 1rem 1rem 1rem 0;
+      font-size: 1.6rem;
+      color: var(--c-gray-2);
+      transition: var(--transition);
+      @include respond(576) {
+         font-size: 1.8rem;
+      }
+      &:focus {
+         outline: none;
+         border-bottom: 0.3rem solid var(--c-primary-d);
+         &:invalid {
+            border-bottom: 0.3rem solid var(--c-secondary);
+         }
+      }
+   }
+   &__label--message,
+   &__label {
+      font-family: var(--f-baloo);
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--c-gray-1);
+      display: block;
+      transition: var(--transition);
+      transform: translateY(-6rem);
+      @include respond(576) {
+         font-size: 1.5rem;
+      }
+   }
+   &__label--message {
+      transform: translateY(-7.5rem);
+   }
+   textarea {
+      max-width: 100%;
+      max-height: 7rem;
+      min-height: 5rem;
+   }
+   &__control::placeholder {
+      color: transparent;
+   }
+   &__control:placeholder-shown + &__label--message,
+   &__control:placeholder-shown + &__label {
+      color: var(--c-gray-2);
+      font-size: 1.6rem;
+      transform: translateY(-3.5rem);
+      @include respond(576) {
+         font-size: 1.8rem;
+      }
+   }
+   &__control:placeholder-shown + &__label--message {
+      transform: translateY(-5rem);
+   }
+   &__btn {
+      font-family: var(--f-muli);
+      font-size: 2rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      text-shadow: 0 0.1rem 0.3rem rgba($color: #000000, $alpha: 0.5);
+      box-shadow: 0 0.1rem 0.3rem rgba($color: #000000, $alpha: 0.3);
+      padding: 1.5rem 0;
+      margin-top: 2rem;
+   }
+}
